@@ -1,10 +1,3 @@
-//
-//  Persistence.swift
-//  Minesweeper
-//
-//  Created by 吳育臻 on 2025/4/4.
-//
-
 import CoreData
 
 struct PersistenceController {
