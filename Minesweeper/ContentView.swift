@@ -1,9 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var game = Minesweeper(rows: 2, cols: 2, mineCount: 1)
+    @StateObject private var game = Minesweeper(rows: 2, cols: 2, mineCount: 1)
     @State private var hasClicked = false
-    @State private var revealed: [[Bool]] = Array(repeating: Array(repeating: false, count: 9),count: 9)
     @State private var isGameOver = false
     @State private var isGameWon = false
     @State private var showGameOverAlert = false
@@ -20,7 +19,7 @@ struct ContentView: View {
                                 game.placeMines(excluding: pos)
                                 hasClicked = true
                             }
-                            revealed[row][col]=true
+                            game.reveal(at: pos)
                             if game.isMine(at: pos){
                                 isGameOver = true
                                 showGameOverAlert = true
@@ -58,29 +57,21 @@ struct ContentView: View {
 
     }
     private func displaySymbol(for position: Position) -> String {
-        if revealed[position.row][position.col] {
+        if game.isRevealed(position) {
             return game.isMine(at: position) ? "💣" : "😀"
-        }
-        else {
+        } else {
             return ""
         }
     }
     private func restartGame(){
-        game = Minesweeper(rows: 2, cols: 2, mineCount: 1) // 重新初始化遊戲物件
+        game.reset()
         hasClicked = false
-        revealed = Array(repeating: Array(repeating: false, count: 9), count: 9)
         isGameOver = false
+        isGameWon = false
     }
+
     private func checkForWin() {
-        var revealedCount = 0
-        for row in 0..<game.rows {
-            for col in 0..<game.cols {
-                if revealed[row][col] {
-                    revealedCount += 1
-                }
-            }
-        }
-        if revealedCount == game.rows * game.cols - game.mineCount {
+        if game.checkWin() {
             isGameWon = true
             showWinAlert = true
         }
