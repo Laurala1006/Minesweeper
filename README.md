@@ -9,16 +9,13 @@ This is a simple implementation of the Minesweeper game using SwiftUI and Swift.
 
 ### Step 1: Clone the Project
 
-To get started, clone the repository to your local machine using the following command:
-
 ```bash
 git clone https://github.com/Laurala1006/Minesweeper.git
 ```
 ### Step 2: Open the Project
-Navigate to the project directory in your terminal.  
-Open the project file (.xcodeproj or .xcworkspace) in Xcode:
 
 ```bash
+cd Minesweeper
 open Minesweeper.xcodeproj
 ```
 ### Step 3: Run the Project
