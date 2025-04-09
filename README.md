@@ -11,7 +11,7 @@ Minesweeper Game：This is a simple implementation of the Minesweeper game using
 To get started, clone the repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/yourusername/minesweeper.git
+git clone https://github.com/Laurala1006/Minesweeper.git
 ```
 ### Step 2: Open the Project
 Navigate to the project directory in your terminal.  
