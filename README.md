@@ -1,4 +1,5 @@
-Minesweeper Game：This is a simple implementation of the Minesweeper game using SwiftUI and Swift. The game features a mine layout and displays the result of either hitting a mine or successfully avoiding all mines.  
+# Minesweeper Game
+This is a simple implementation of the Minesweeper game using SwiftUI and Swift. The game features a mine layout and displays the result of either hitting a mine or successfully avoiding all mines.  
 
 ## Installation and Setup Guide
 
